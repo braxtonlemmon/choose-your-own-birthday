@@ -1,10 +1,10 @@
 const theme = {
-  colors: {
-    dark: '#2f3020',
-    medium: '#596235',
-    pale: '#cdcbd6',
-    coral: '#d96846',
-    hero: '#130e0c'
+  colors: { 
+    blue: "#3f7cac", 
+    pewter: "#95afba", 
+    laurel: "#bdc4a7", 
+    spring: "#d5e1a3", 
+    light: "#e2f89c" 
   },
   
   fontSize: {

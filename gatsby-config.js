@@ -28,15 +28,21 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'Schoolbell'
+          'Schoolbell',
+          'Love Ya Like A Sister'
         ]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve('./src/components/layout.js')
       }
     },
     'gatsby-plugin-styled-components',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    'gatsby-plugin-transition-link',
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

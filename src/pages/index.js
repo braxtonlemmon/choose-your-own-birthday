@@ -1,22 +1,49 @@
 import React from "react"
-import { Link } from "gatsby"
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import styled, {keyframes} from 'styled-components';
+import { Wrapper } from '../components/Shared';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+
+const pulse = keyframes`
+  0% { opacity: 0.1}
+  50% { opacity: 1 }
+  100% { opacity: 0.1 }
+`;
+
+const Container = styled(Wrapper)`
+  h1 {
+    font-size: 11em;
+    animation: ${pulse} 1.5s ease infinite;
+    color: ${props => props.theme.colors.light};
+  }
+`;
+
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
+  <Container>
+    <AniLink
+      paintDrip
+      to="/welcome"
+      duration={0.8}
+      className="link"
+      hex="#e2f89c"
+    >
+      <h1>8:17</h1>
+    </AniLink>
+    {/* <AniLink 
+      paintDrip 
+      to="/page-2/" 
+      duration={0.8}
+      color="yellow"
+      >Page 2</AniLink>
+      
+      <AniLink
+      cover
+      to="/page-2"
+      bg="orange"
+      direction="left"
+    >Blah</AniLink> */}
+  </Container>
 )
 
 export default IndexPage

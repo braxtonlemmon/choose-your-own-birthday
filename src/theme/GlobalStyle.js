@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
     /* font-family: 'Special Elite', cursive; */
     font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Montserrat';
+    font-family: 'Love Ya Like A Sister';
   }
 
   body, html {
@@ -17,7 +17,8 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     /* font-family: 'Special Elite', cursive; */
     font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Montserrat';
+    font-family: 'Love Ya Like A Sister';
+    background: #3f7cac;
   }
 
   html {
@@ -28,12 +29,21 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
 
   a {
     text-decoration: none;
-    color: black;
+    /* color: black; */
+  }
+
+  div.tl-edges {
+    overflow-x: visible;
+    height: 100vh;
+  }
+
+  div.tl-wrapper {
+    height: 100%;
   }
 
 `

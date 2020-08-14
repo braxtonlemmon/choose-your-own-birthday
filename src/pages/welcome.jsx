@@ -4,7 +4,7 @@ import { Wrapper, Button } from '../components/Shared';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-
+import yay from '../audio/yay.mp3';
 
 const Container = styled(Wrapper)`
   color: ${props => props.theme.colors.light};
@@ -45,6 +45,7 @@ const Go = styled(Button)`
 function Welcome({ data }) {
   return (
     <Container>
+      <audio src={yay} autoPlay />
       <ImgDiv>
         <Otter fluid={data.file.childImageSharp.fluid} alt="otter" />
       </ImgDiv>

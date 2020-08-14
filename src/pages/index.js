@@ -24,7 +24,7 @@ const IndexPage = () => (
     <AniLink
       paintDrip
       to="/welcome"
-      duration={0.8}
+      duration={2}
       className="link"
       hex="#e2f89c"
     >

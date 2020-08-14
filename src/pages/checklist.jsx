@@ -120,7 +120,7 @@ function Checklist() {
       </List>
       <AniLink
         paintDrip
-        to="/welcome"
+        to="/popquiz"
         duration={0.8}
         className="link"
         hex="#e2f89c"

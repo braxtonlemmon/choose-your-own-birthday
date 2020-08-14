@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,6 +9,12 @@ export const Wrapper = styled.div`
   width: 100%;
   position: relative;
 `;
+
+const grow = keyframes`
+  0% { transform: scale(1) }
+  50% { transform: scale(1.05) }
+  100% { transform: scale(1) }
+`
 
 export const Button = styled.div`
   border-radius: 50%;
@@ -28,4 +34,5 @@ export const Button = styled.div`
     color: ${props => props.theme.colors.pewter};
     border: 10px solid ${props => props.theme.colors.pewter};
   }
+  animation: ${grow} 800ms ease infinite;
 `;

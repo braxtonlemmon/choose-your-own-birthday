@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Josefin Sans', sans-serif;
     font-family: 'Love Ya Like A Sister';
     background: #3f7cac;
+    user-select: none;
   }
 
   html {

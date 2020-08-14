@@ -66,7 +66,7 @@ function HotGirlSummer() {
       <p id="hot-summer">SUMMER</p>
       <AniLink
         paintDrip
-        to="/welcome"
+        to="/checklist"
         duration={0.8}
         className="link"
         hex="#e2f89c"

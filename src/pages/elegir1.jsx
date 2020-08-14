@@ -7,7 +7,7 @@ import AdventureContext from '../utils/AdventureContext';
 const grow = keyframes`
   0% { transform: scale(1) }
   50% { transform: scale(1.05) }
-  10% { transform: scale(1) }
+  100% { transform: scale(1) }
 `
 
 const slideIn = keyframes`
@@ -21,15 +21,15 @@ const fadeIn = keyframes`
 `
 
 const goAcross = keyframes`
-  0% { transform: translateX(-600px) }
-  20% { transform: translateX(0) }
-  40% { transform: translateX(600px) }
-  50% { transform: translateY(500px) }
+  0% { transform: translateX(-300px) }
   100% { transform: translateX(0) }
 
 `
 
 const Container = styled(Wrapper)`
+  max-width: 800px;
+  margin: 0 auto;
+  max-height: 800px;
   #sore {
     top: 30px;
     left: 50px;
@@ -47,11 +47,23 @@ const Container = styled(Wrapper)`
     right: 15px;
     animation-delay: 300ms;
   }
-  #next {
+  #elegir1-yes, #elegir1-no {
     position: relative;
     opacity: 0;
-    animation: ${fadeIn} 1s forwards;
+    animation: ${fadeIn} 1s forwards, ${grow} 800ms infinite;
     animation-delay: 1s;
+    margin-bottom: 15px;
+  }
+  #elegir1-yes {
+    margin-right: 60px;
+    background: green;
+    animation-delay: 500ms;
+  }
+  #elegir1-no {
+    margin-left: 60px;
+    margin-top: 50px;
+    background: red;
+    cursor: pointer;
   }
   p {
     position: absolute;
@@ -69,16 +81,18 @@ const Container = styled(Wrapper)`
     text-align: center;
     top: 10px;
     left: 30px;
+    font-size: 5em;
     transform: translateX(-600px);
-    animation: ${goAcross} 8s linear forwards;
+    animation: ${goAcross} 600ms cubic-bezier(0.73, 0.34, 0.6, 1.31) forwards;
   }
 `
 
 const Choice = styled(Button)`
   position: absolute;
+  height: ${props => props.noOpt ? `${props.noSize}px` : '140px'};
+  width: ${props => props.noOpt ? `${props.noSize}px` : '140px'};
   animation: ${grow} 800ms ease-in-out infinite;
-  height: 140px;
-  width: 140px;
+  visibility: ${props => props.noOpt && props.noSize < 60 ? 'hidden' : 'visible'};
 `;
 
 function Elegir1() {
@@ -86,12 +100,16 @@ function Elegir1() {
     choices: { sore, bored, ungry },
     updateChoices
   } = useContext(AdventureContext);
-
+  const [noSize, setNoSize] = useState(140);
   
+  const handleNoClick = () => {
+    const size = noSize;
+    console.log(noSize);
+    setNoSize(size - 20);
+  }
+
   return (
     <Container>
-      
-
       {sore && (
         <>
           <AniLink
@@ -145,8 +163,22 @@ function Elegir1() {
               className="link"
               hex="#e2f89c"
             >
-              <Choice id="next">NEXT</Choice>
+              <Choice id="elegir1-yes">YES</Choice>
             </AniLink>
+          {/* <AniLink
+            paintDrip
+            to="#"
+            duration={0.8}
+            className="link"
+            hex="#e2f89c"
+          > */}
+            <Choice 
+              id="elegir1-no"
+              onClick={handleNoClick}
+              noOpt
+              noSize={noSize}
+            >NAH</Choice>
+          {/* </AniLink> */}
           </>
         :
           <p>How are you?</p>

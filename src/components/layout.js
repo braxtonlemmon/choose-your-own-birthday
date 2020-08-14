@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import ContextProvider from '../utils/ContextProvider';
 
 const Wrapper = styled.div`
+  height: 100%;
   min-height: 100vh;
   width: 100%;
 `;

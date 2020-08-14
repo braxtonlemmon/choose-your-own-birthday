@@ -111,6 +111,12 @@ function Checklist() {
             <span class="checkmark"></span>
           </label>
         </Row>
+        <Row>
+          <label class="container">Train tix
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+        </Row>
       </List>
       <AniLink
         paintDrip

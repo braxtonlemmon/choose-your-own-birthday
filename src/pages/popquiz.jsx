@@ -6,7 +6,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Container = styled(Wrapper)`
   h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     color: ${props => props.theme.colors.light};
     padding-top: 10px;
     padding-bottom: 15px;

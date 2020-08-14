@@ -24,6 +24,7 @@ const Image = styled.div`
 
 const Pic = styled(Img)`
   height: 100%;
+  filter: drop-shadow(16px 16px 20px rgba(0,0,0,0.4))
 `;
 
 const Duh = styled(Button)`
@@ -43,8 +44,6 @@ function Preview({ data }) {
         loading="eager"
         fluid={data.flower.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
-        critical
       />
     </Image>),
     (<Image 
@@ -53,7 +52,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.water.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     ),
@@ -63,7 +61,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.bagel.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     ),
@@ -73,7 +70,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.football.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     ),
@@ -83,7 +79,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.nachos.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     ),
@@ -93,7 +88,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.nachos.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     ),
@@ -103,7 +97,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.beans.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     ),
@@ -113,7 +106,6 @@ function Preview({ data }) {
       <Pic 
         fluid={data.raspberries.childImageSharp.fluid} 
         alt="" 
-        fadeIn={true}
       />
     </Image>
     )
@@ -134,7 +126,7 @@ function Preview({ data }) {
     const theCount = count;
     setCount(theCount + 1);
     if (theCount > 6) {
-      setNextUrl('/welcome');
+      setNextUrl('/party');
     }
   }
 
@@ -148,7 +140,7 @@ function Preview({ data }) {
         setCurrent(false);
         clearInterval(runIt)
       }
-    }, 200)
+    }, 3000)
   }, [])
 
   return (

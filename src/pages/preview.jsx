@@ -151,7 +151,6 @@ function Preview({ data }) {
     }, 200)
   }, [])
 
-  console.log(elements)
   return (
     <Container>
       {current && current}

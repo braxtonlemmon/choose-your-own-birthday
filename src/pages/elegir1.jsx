@@ -104,7 +104,6 @@ function Elegir1() {
   
   const handleNoClick = () => {
     const size = noSize;
-    console.log(noSize);
     setNoSize(size - 20);
   }
 

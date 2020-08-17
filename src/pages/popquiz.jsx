@@ -22,7 +22,7 @@ const Container = styled(Wrapper)`
 function PopQuiz() {
   return (
     <Container>
-      <h2>OmG pOp QuIz!</h2>
+      <h2>wOaH pOp QuIz!</h2>
       <h2>...</h2>
       <h2>hOpE yOu'Re SmArT</h2>
       <AniLink
